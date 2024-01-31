@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRevitTest", "MyRevitTest\MyRevitTest.csproj", "{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		R2022|Any CPU = R2022|Any CPU
+		R2023|Any CPU = R2023|Any CPU
+		R2024|Any CPU = R2024|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.R2022|Any CPU.ActiveCfg = R2022|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.R2022|Any CPU.Build.0 = R2022|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.R2023|Any CPU.ActiveCfg = R2023|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.R2023|Any CPU.Build.0 = R2023|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.R2024|Any CPU.ActiveCfg = R2024|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.R2024|Any CPU.Build.0 = R2024|Any CPU
+		{3D49A4C6-5BCB-46F0-85A4-61A47E66761C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C7C37A-0C8F-4C05-B823-823BF1E2FF19}
+	EndGlobalSection
+EndGlobal
