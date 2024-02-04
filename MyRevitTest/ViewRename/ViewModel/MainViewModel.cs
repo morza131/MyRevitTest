@@ -19,7 +19,7 @@ namespace MyRevitTest.ViewRename.ViewModel
             _revitTask = revitTask;
             _commandData = commandData;
             _selectedViews = selectedViews;
-            RenameViewsCommand = new UD_BIM.RelayCommand(OnRenameViewsCommandExecute, CanRenameViewsCommandExecuted);
+            RenameViewsCommand = new RelayCommand(OnRenameViewsCommandExecute, CanRenameViewsCommandExecuted);
         }        
         public ICommand RenameViewsCommand { get; }
         private void OnRenameViewsCommandExecute(object p)

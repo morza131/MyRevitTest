@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace UD_BIM
+namespace MyRevitTest
 {
     public class RelayCommand : ICommand
     {
