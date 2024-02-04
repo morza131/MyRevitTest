@@ -44,7 +44,7 @@
          Grid.Column="1" Grid.Row="1"/>
         <Label Content="Введите суффикс"
        Grid.Column="0" Grid.Row="2"/>
-        <TextBox x:Name="suffixText" Text="{Binding SufixText, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox x:Name="suffixText" Text="{Binding SuffixText, UpdateSourceTrigger=PropertyChanged}"
          Grid.Column="1" Grid.Row="2"/>
         <Label Content="Пример названия:"
        Grid.Column="0" Grid.Row="3"/>

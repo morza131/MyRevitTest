@@ -84,11 +84,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
     <PackageReference Include="RevitTask">
       <Version>3.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Addins\TestAddin_2024.addin" />
+    <None Include="Addins\TestAddin_2023.addin" />
     <None Include="Addins\TestAddin_2022.addin" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
