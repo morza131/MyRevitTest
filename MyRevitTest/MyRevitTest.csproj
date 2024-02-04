@@ -72,9 +72,7 @@
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Addins\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="ViewFilter\Views\MainView.xaml">
       <SubType>Designer</SubType>
@@ -89,6 +87,9 @@
     <PackageReference Include="RevitTask">
       <Version>3.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Addins\TestAddin_2022.addin" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Choose>
