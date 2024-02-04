@@ -12,7 +12,7 @@ namespace MyRevitTest.ViewRename
 {
 
     [Transaction(TransactionMode.Manual)]
-    internal class Main : IExternalCommand
+    internal class ViewRenameMain : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
