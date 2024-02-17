@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>MyTest</Name>
+    <Assembly>C:\Program Files\MyTest\R2023\MyRevitTest_2023.dll</Assembly>
+    <FullClassName>MyRevitTest.BarClass</FullClassName>
+    <ClientId>5CC89828-1516-4A79-932E-CDC036FD2D30</ClientId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>By Dmitry Morozov</VendorDescription>
+  </AddIn>
+</RevitAddIns>

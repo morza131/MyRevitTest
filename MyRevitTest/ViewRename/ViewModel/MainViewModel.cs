@@ -9,6 +9,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Newtonsoft.Json;
+using System.IO;
+using System.Reflection;
 
 namespace MyRevitTest.ViewRename.ViewModel
 {
@@ -19,13 +22,15 @@ namespace MyRevitTest.ViewRename.ViewModel
             _revitTask = revitTask;
             _commandData = commandData;
             _selectedViews = selectedViews;
-            RenameViewsCommand = new UD_BIM.RelayCommand(OnRenameViewsCommandExecute, CanRenameViewsCommandExecuted);
+            RenameViewsCommand = new RelayCommand(OnRenameViewsCommandExecute, CanRenameViewsCommandExecuted);
+            LoadSettings();
         }        
         public ICommand RenameViewsCommand { get; }
         private void OnRenameViewsCommandExecute(object p)
         {
             RenameModel.Rename(_revitTask, _selectedViews, _commandData,
-                PrefixText, StartNumberText, SufixText);
+                PrefixText, StartNumberText, SuffixText);
+            SaveSettings();
             RaiseCloseRequest();
             TaskDialog.Show("Готово", "Виды успешно переименованы");
         }
@@ -61,7 +66,7 @@ namespace MyRevitTest.ViewRename.ViewModel
             }
         }
         private string sufixText;
-        public string SufixText
+        public string SuffixText
         {
             get => sufixText;
             set
@@ -99,16 +104,49 @@ namespace MyRevitTest.ViewRename.ViewModel
             int startNumber;
             if (int.TryParse(StartNumberText, out startNumber))
             {
-                SampleOfName = $"{PrefixText}{startNumber}{SufixText}";
+                SampleOfName = $"{PrefixText}{startNumber}{SuffixText}";
             }
             else
             {
-                SampleOfName = $"{PrefixText}{StartNumberText}{SufixText}";
+                SampleOfName = $"{PrefixText}{StartNumberText}{SuffixText}";
+            }
+        }
+
+        private void SaveSettings()
+        {
+            var settings = new
+            {
+                PrefixText = this.PrefixText,
+                StartNumberText = this.StartNumberText,
+                SuffixText = this.SuffixText
+            };
+            string json = JsonConvert.SerializeObject(settings);
+            File.WriteAllText(SettingsPath, json);
+        }
+
+        private void LoadSettings()
+        {
+            if (File.Exists(SettingsPath))
+            {
+                string json = File.ReadAllText(SettingsPath);
+                var settings = JsonConvert.DeserializeObject<dynamic>(json);
+                PrefixText = settings.PrefixText;
+                StartNumberText = settings.StartNumberText;
+                SuffixText = settings.SuffixText;
             }
         }
 
         private RevitTask _revitTask;
         private ExternalCommandData _commandData;
         private List<View> _selectedViews;
+#if R2022
+        private string SettingsPath = @"C:\Program Files\MyTest\R2022\ViewRenameSettings.json";
+#elif R2023
+        private string SettingsPath = @"C:\Program Files\MyTest\R2023\ViewRenameSettings.json";
+#elif R2024
+        private string SettingsPath = @"C:\Program Files\MyTest\R2024\ViewRenameSettings.json";
+#elif DEBUG
+        private string SettingsPath = Assembly.GetExecutingAssembly().Location + "ViewRenameSettings.json";
+#endif
     }
 }
